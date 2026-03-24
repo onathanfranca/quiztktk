@@ -1,0 +1,315 @@
+<!DOCTYPE html><html lang="pt-BR">
+<!-- Mirrored from sheinparticipe.shop/front/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2026 11:50:38 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz TikTok 2026 - Descubra seu Perfil!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Custom Alert Modal -->
+      <div id="custom-alert-overlay" class="custom-alert-overlay hidden">
+        <div class="custom-alert-box glass-effect">
+          <div class="alert-icon">🎉</div>
+          <h3 id="alert-title">Sucesso!</h3>
+          <p id="alert-message">Mensagem aqui</p>
+          <button id="btn-close-alert" class="btn-primary-small">OK</button>
+        </div>
+      </div>
+
+      <!-- Tela Inicial -->
+      <section id="start-screen" class="screen active">
+        <div class="logo-container">
+          <!-- Logo será inserido via CSS ou imagem -->
+          <img src="images/logo.png" alt="Quiz TikTok Logo" class="main-logo" id="logo-img">
+        </div>
+        <div class="content-box glass-effect">
+          <h1>Você é viciado no TikTok? 🎵</h1>
+          <p class="subtitle">Descubra seu nível de tiktoker e ganhe prêmios exclusivos!</p>
+          <div class="badges">
+            <span class="badge">🔥 8 Perguntas Rápidas</span>
+            <span class="badge badge-highlight">🎁 Produtos Grátis</span>
+          </div>
+          <p class="small-text">Tempo estimado: 2 minutos</p>
+          <button id="btn-start" class="btn-primary pulse">COMEÇAR AGORA!</button>
+        </div>
+      </section>
+
+      <!-- Tela do Quiz -->
+      <section id="quiz-screen" class="screen hidden">
+        <div id="feedback-popup" class="feedback-popup">WOW! 🔥</div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress"></div>
+        </div>
+        
+        <div class="quiz-card glass-effect">
+          <span class="question-number">Pergunta <span id="current-q">1</span>/8</span>
+          <h2 id="question-text">Carregando pergunta...</h2>
+          
+          <div id="options-container" class="options-grid">
+            <!-- Opções injetadas via JS -->
+          </div>
+
+          <div id="input-container" class="hidden">
+            <textarea id="text-answer" placeholder="Conta pra gente aqui... (máx 140 caracteres)" maxlength="140"></textarea>
+            <button id="btn-next-text" class="btn-primary">Próxima ➤</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tela de Resultado -->
+      <section id="result-screen" class="screen hidden">
+        <div class="confetti-container"></div>
+        <div class="content-box glass-effect">
+          <h2 class="result-title">SEU RESULTADO:</h2>
+          <div class="score-circle">
+            <span id="final-score">0</span>
+            <small>pontos</small>
+          </div>
+          <h3 id="result-feedback">Calculando...</h3>
+          <p id="result-desc">Aguarde um momento...</p>
+          
+          <div class="reward-unlock">
+            <div class="lock-icon">🔓</div>
+            <p>RECOMPENSA DESBLOQUEADA!</p>
+          </div>
+
+          <button id="btn-claim" class="btn-primary shimmer">RESGATAR MEU PRÊMIO 🎁</button>
+        </div>
+      </section>
+
+      <!-- Tela de Recompensas -->
+      <section id="rewards-screen" class="screen hidden">
+        <header class="rewards-header">
+          <h2>🎁 TikTok Shop Secreto</h2>
+          <div class="flash-timer">⚡ FIM DA OFERTA: 04:59</div>
+        </header>
+
+        <div class="rewards-grid">
+          <!-- Produto 1 -->
+          <div class="reward-card">
+            <div class="discount-badge">-100%</div>
+            <div class="reward-img-container">
+               <img src="images/iphone15.jpg" alt="iPhone 15 Pro Max" class="reward-img">
+            </div>
+            <div class="reward-info">
+              <h3 class="reward-title">Apple iPhone 15 Pro Max (256 GB)</h3>
+              <div class="price-container">
+                <span class="current-price">R$0,00</span>
+                <span class="original-price">R$9.499</span>
+              </div>
+              <p class="stock-text">🔥 842 pessoas resgataram</p>
+              <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+            </div>
+          </div>
+
+          <!-- Produto 2 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/jbl_boombox.jpg" alt="JBL Boombox 3" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Caixa de Som Bluetooth JBL Boombox 3 Wifi Usb Preta</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$2.399</span>
+               </div>
+               <p class="stock-text">🔥 415 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 3 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/apple_watch.webp" alt="Apple Watch Series 9" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Apple Watch Series 9 GPS 45mm</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$2.499</span>
+               </div>
+               <p class="stock-text">⚡ 670 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 4 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/samsung_a56_new.jpg" alt="Samsung A56" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Samsung Galaxy A56 5G 128GB</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$2.199</span>
+               </div>
+               <p class="stock-text">🔥 289 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 5 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/parafusadeira.webp" alt="Parafusadeira Sunto" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Parafusadeira Sunto DW21</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$350</span>
+               </div>
+               <p class="stock-text">⚡ 320 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 6 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/dior_sauvage.webp" alt="Dior Sauvage" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Dior Sauvage EDT 200ml</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$899</span>
+               </div>
+               <p class="stock-text">🔥 512 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 7 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/samsung_tv.webp" alt="Samsung AI TV" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Samsung AI TV 55" QLED</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$3.500</span>
+               </div>
+               <p class="stock-text">⚡ 145 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 8 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/ps5_pro.webp" alt="PS5 Pro" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Sony PlayStation 5 Pro 2TB</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$4.500</span>
+               </div>
+               <p class="stock-text">🔥 890 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 9 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/poco_f7.webp" alt="Xiaomi Poco F7" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Xiaomi Poco F7 512GB</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$2.800</span>
+               </div>
+               <p class="stock-text">⚡ 410 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+
+          <!-- Produto 10 -->
+          <div class="reward-card">
+             <div class="discount-badge">-100%</div>
+             <div class="reward-img-container">
+               <img src="images/bike.webp" alt="Bicicleta Aro 29" class="reward-img">
+             </div>
+             <div class="reward-info">
+               <h3 class="reward-title">Bicicleta Aro 29 Aço Carbono</h3>
+               <div class="price-container">
+                 <span class="current-price">R$0,00</span>
+                 <span class="original-price">R$1.200</span>
+               </div>
+               <p class="stock-text">🔥 230 pessoas resgataram</p>
+               <button class="btn-claim-reward" data-link="https://seguropagamentos.com.br/quizttk">RESGATAR</button>
+             </div>
+           </div>
+        </div>
+
+        <div class="testimonials-section">
+          <h3 class="testimonials-title">Quem resgatou, amou! 💖</h3>
+          
+          <div class="testimonial-card glass-effect">
+            <div class="user-header">
+              <img src="images/user1.png" alt="Foto cliente" class="user-avatar">
+              <div class="user-info">
+                <span class="user-name">Ana Clara</span>
+                <div class="user-rating">★★★★★</div>
+              </div>
+              <span class="time-ago">há 2h</span>
+            </div>
+            <p class="testimonial-text">"Gente, chokada! A caixa de som JBL chegou em 2 dias. O som é perfeito, super recomendo!"</p>
+            <div class="verified-badge">✔ Compra Verificada</div>
+          </div>
+
+          <div class="testimonial-card glass-effect">
+            <div class="user-header">
+              <img src="images/user2.png" alt="Foto cliente" class="user-avatar">
+              <div class="user-info">
+                <span class="user-name">Marcos Silva</span>
+                <div class="user-rating">★★★★★</div>
+              </div>
+              <span class="time-ago">há 5h</span>
+            </div>
+            <p class="testimonial-text">"Resgatei o iphone achando que nao ia chegar kkk Chegou lacrado, tudo certinho. voces sao fodas!"</p>
+            <div class="verified-badge">✔ Compra Verificada</div>
+          </div>
+
+          <div class="testimonial-card glass-effect">
+            <div class="user-header">
+              <img src="images/user3.png" alt="Foto cliente" class="user-avatar">
+              <div class="user-info">
+                <span class="user-name">Júlia M.</span>
+                <div class="user-rating">★★★★★</div>
+              </div>
+              <span class="time-ago">ontem</span>
+            </div>
+            <p class="testimonial-text">"Nunca ganhei nada na vida, mas consegui a Parafusadeira! Chegou super rápido e funciona de verdade."</p>
+            <div class="verified-badge">✔ Compra Verificada</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/script.js"></script>
+  
+
+</body>
+<!-- Mirrored from sheinparticipe.shop/front/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Mar 2026 11:50:42 GMT -->
+</html>

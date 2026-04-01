@@ -371,7 +371,7 @@ const fakeProducts = [
   { name: "Poco F7", img: "assets/poco_f7.webp" },
   { name: "Bike Aro 29", img: "assets/bike.webp" }
 ];
-
+ 
 function startSocialProofNotifications() {
   // Primeira notificação rápida
   setTimeout(showFakeNotification, 1500);
@@ -381,7 +381,7 @@ function startSocialProofNotifications() {
     showFakeNotification();
   }, Math.random() * (8000 - 4000) + 4000); 
 }
-
+ 
 function showFakeNotification() {
   const name = fakeNames[Math.floor(Math.random() * fakeNames.length)];
   const product = fakeProducts[Math.floor(Math.random() * fakeProducts.length)];
@@ -389,7 +389,6 @@ function showFakeNotification() {
   const notif = document.createElement('div');
   notif.className = 'sale-notification';
   notif.innerHTML = `
-    <img src="${product.img}" class="sale-notif-img" alt="Produto">
     <div class="sale-notif-text">
       <strong>${name} acabou de resgatar</strong>
       <span>${product.name}</span>
@@ -403,11 +402,12 @@ function showFakeNotification() {
     notif.remove();
   }, 5000);
 }
-
+ 
 function mockShare(platform) {
   showCustomAlert(
     "Compartilhado!", 
     `Enviado para ${platform} com sucesso! Sua chance extra foi desbloqueada.`,
     "🚀"
+
   );
 }
